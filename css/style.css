@@ -1,18 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+
 :root {
-  --background-color: rgb(30,33,37);
-  --navbackground: rgb(87,90,93);
-  --navborder: 2px double rgb(208,210,212);
+  --theme-background-color: white;
+  --navbackground: rgb(249,250,251);
+  --navborder: 2px solid lightgray;
+  --baloo2: "Baloo 2", sans-serif;
+  --theme-color: black;
 }
 
 * {
   margin: 0;
   padding: 0;
+  border: border-box;
+  font-family: var(--baloo2);
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 body {
-  background-color: var(--background-color);
-  color: white;
+  background-color: var(--theme-background-color);
+  color: var(--theme-color);
 }
-#loading {
+#loader {
   width: 100%;
   height: 100vh;
   border: 2px solid black;
@@ -20,70 +28,140 @@ body {
   justify-content: center;
   align-items: center;
 }
-#loading .center {
+#loader .center {
   display: grid;
   grid-template-areas: center-logo;
 }
-#loading .center img {
+#loader .center img {
   width: 100px;
   height: 100px;
-  border: 2px solid white;
+  border: 2px solid var(--theme-background-color);
   border-radius: 50%;
 }
-#loading .center div {
+#loader .center div {
   grid-area: center-logo;
 }
-#loading .python {
+#loader .python-icon {
   transform: translate(-30vw, -30vh);
 }
-#loading .css {
+#loader .css-icon {
   transform: translate(30vw, -30vh);
 }
-#loading .html {
+#loader .html-icon {
   transform: translate(-30vw, 30vh);
 }
-#loading .js {
+#loader .js-icon {
   transform: translate(30vw, 30vh);
 }
-#loading .logo {
+#loader .inialiyaar-icon {
   transform: scale(0.5);
   opacity: 0;
-  animation: Logo-Popup 2s ease-in 2s ;
+  animation: Logo-Popup 300ms ease-in 1200ms ;
 }
-@keyframes Logo-Popup {
-  80% {
+
+@keyframes MusicIconAnimate {
+  0% {
+    transform: translateX(0px);
     opacity: 1;
-    transform: scale(3);
+  }
+  50% {
+    transform: translateX(30vw) scale(0.5);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes AnimeIconAnimate {
+  0% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-30vw) scale(0.5);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes Logo-Popup {
+  0% {
+    opacity: 1;
   }
   100% {
     transform: scale(10);
   }
 }
 @keyframes Logo-Center {
-  60% {
-    transform: translate(0px, 0px) rotate(360deg);
+  80% {
+    transform: translate(0px, 0px);
   }
   90% {
-    transform: scale(0.5) rotate(360deg);
+    transform: scale(0.5);
   }
   100% {
     opacity: 0;
   }
 }
-#loading .python, #loading .css, #loading .html, #loading .js {
-  animation: Logo-Center 2s ease-in-out forwards;
+#loader .python-icon, #loader .css-icon, #loader .html-icon, #loader .js-icon {
+  animation: Logo-Center 300ms linear 100ms forwards;
+}
+
+#loader > .center > .music-icon {
+  
+  opacity: 0;
+  animation: MusicIconAnimate 1s ease-in-out 450ms;
+}
+
+#loader > .center > .anime-icon {
+  
+  opacity: 0;
+  animation: AnimeIconAnimate 1s ease-in-out 450ms;
 }
 header nav {
-  height: 15vh;
+  height: 90px;
   width: 100%;
   background-color: var(--navbackground);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-bottom: var(--navborder);
 }
-header nav span {
-  font-size: 36px;
+header nav span, header nav i {
+  font-size: 1.90rem;
   padding-right: 5px;
-  font-weight: bold;
+  font-weight: 400;
+}
+header > nav > .name {
+  display: flex;
+}
+
+.hero-pannel {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header > .hero-pannel > .inialiyaar-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  top: 20px;
+}
+.hero-pannel{
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-pannel::before{
+  content: "";
+  opacity: 0.4;
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+  background-image: url('/../assets/hero_background.jpg');
 }
