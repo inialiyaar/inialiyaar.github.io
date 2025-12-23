@@ -133,6 +133,9 @@ header nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: sticky;
+  top: 0px;
+  background-color: var(--theme-background-color);
 }
 #search-input {
   width: 60vw;
@@ -152,11 +155,12 @@ header nav {
   height: 40px;
   background-color: var(--theme-background-color);
   border: none;
-  color: white;
-  font-size: 30px;
   position: relative;
-  top: 8px;
-  left: 30px;
+  top: 14px;
+  left: 10px;
+}
+#menu-bar > img {
+  width: 40px;
 }
 .hero-pannel {
   width: 90%;
@@ -290,4 +294,39 @@ main > section >.content > a{
 
 #sideMenu.active{
   right: 0;
+}
+
+.homeFooter{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.homeFooter h3{
+  font-size: 36px;
+}
+footer > .footerbox {
+  width: 90%;
+  height: 100px;
+  background-color: var(--contentbackground);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .footerbox div span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer > .footerbox img {
+  width: 20px;
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
+}
+footer .footerbox a {
+  color: white;
+  text-decoration: none;
 }
