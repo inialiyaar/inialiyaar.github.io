@@ -178,7 +178,7 @@ header nav {
 .nav-logo {
   width: 40px;
   position: absolute;
-  top: 35px;
+  top: 32px;
   left: -8px;
   border-radius: 50%;
 }
@@ -187,6 +187,7 @@ header nav {
 }
 .hero-pannel {
   width: 90%;
+  max-width: 400px;
   height: 100px;
   background-color: var(--contentbackground);
   display: flex;
@@ -331,6 +332,7 @@ main > section >.content > a{
 }
 footer > .footerbox {
   width: 90%;
+  max-width: 400px;
   height: 100px;
   background-color: var(--contentbackground);
   border-radius: 10px;
@@ -363,11 +365,10 @@ header > h2 {
   font-size: 30px;
   font-family: Arial;
 }
-.anime {
+.anime, .music {
   width: 100%;
   display: flex;
   align-items: center;
-  border-radius: 10px;
   flex-direction: column;
 }
 .anime > div {
@@ -420,4 +421,46 @@ header > h2 {
   font-weight: 400;
   position: relative;
   top: 5px;
+}
+
+.music > div {
+  width: 90%;
+  height: 450px;
+  background-color: var(--contentbackground);
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.music > div > img {
+  width: 90%;
+  max-width: 300px;
+  height: 200px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid powderblue;
+}
+.music > div > h2 {
+  font-size: 36px;
+  transform: translateY(-8px);
+}
+.music > div > h3 {
+  font-size: 25px;
+  width: 80%;
+  text-align: center;
+  color: rgba(255,255,255,0.50);
+  border-bottom: 2px solid white;
+  transform: translateY(-15px);
+}
+.music > div > a {
+  background-color: tomato;
+  text-decoration: none;
+  font-size: 35px;
+  margin-top: 10px;
+  font-weight: bolder;
+  color: white;
+  padding: 0px 30px;
+  border-radius: 30px;
 }
