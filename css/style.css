@@ -151,7 +151,7 @@ header nav {
   outline: none;
   background-color: var(--light-theme-background);
 }
-#menu-bar{
+.menu-bar{
   height: 40px;
   background-color: var(--theme-background-color);
   border: none;
@@ -159,7 +159,30 @@ header nav {
   top: 14px;
   left: 10px;
 }
-#menu-bar > img {
+
+.home-menu{
+  height: 40px;
+  background-color: var(--theme-background-color);
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.menu-bar > img {
+  width: 40px;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+}
+.nav-logo {
+  width: 40px;
+  position: absolute;
+  top: 35px;
+  left: -8px;
+  border-radius: 50%;
+}
+.home-menu > img {
   width: 40px;
 }
 .hero-pannel {
@@ -294,6 +317,7 @@ main > section >.content > a{
 
 #sideMenu.active{
   right: 0;
+  z-index: 10;
 }
 
 .homeFooter{
@@ -329,4 +353,71 @@ footer > .footerbox img {
 footer .footerbox a {
   color: white;
   text-decoration: none;
+}
+header > h1 {
+  font-size: 38px;
+  padding: 10px 50px;
+  border-radius: 10px;
+}
+header > h2 {
+  font-size: 30px;
+  font-family: Arial;
+}
+.anime {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+}
+.anime > div {
+  width: 90%;
+  background-color: var(--contentbackground);
+  border-radius: 10px;
+  margin: 20px 0;
+  height: 200px;
+  display: flex;
+}
+.anime > div > img {
+  width: 100px;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 70%;
+  margin: 10px 10px;
+}
+.anime .info {
+  width: 80%;
+  margin-top: 30px;
+  height: 5%;
+}
+.anime .info .capsule{
+  font-size: 10px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  height: 20px;
+  padding: 0px 5px;
+  position: relative;
+  bottom: 18px;
+  margin-left: 2px;
+}
+.anime .info h3 {
+  display: inline-block;
+  font-size: 15px;
+  transform: translateY(-15px);
+}
+
+.anime .info p {
+  font-size: 10px;
+  color: var(--searchcolor);
+}
+.anime .info img {
+  width: 25px;
+  position: relative;
+  top: 10px;
+}
+.anime .info .rate {
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  top: 5px;
 }
