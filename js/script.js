@@ -1,30 +1,57 @@
-document.addEventListener("DOMContentLoaded", () => {
+setTimeout(()=>{
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("home").hidden = false;
+}, 1500)
 
-  const menuBtn = document.getElementById("menu-bar");
-  const sideMenu = document.getElementById("sideMenu");
-  const closeBtn = document.getElementById("close-side-menu");
+let menu_btn = document.getElementById("menu-bar")
+let side_menu = document.getElementById("sideMenu")
+let close_btn = document.getElementById("close-side-menu")
+let body = document.body
+let about = document.getElementById("about-text")
 
-  setTimeout(() => {
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("home").hidden = false;
-  }, 1500);
+const ShowMenu = ((event) =>{
+  event.stopPropagation()
+  side_menu.classList.toggle("PushMenu")
+})
 
-  menuBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    sideMenu.classList.toggle("active");
-  });
+const CloseMenu = ((event)=>{
+  event.stopPropagation()
+  side_menu.classList.remove("PushMenu")
+})
+menu_btn.addEventListener("click", ShowMenu)
+close_btn.addEventListener("click", CloseMenu)
 
-  closeBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    sideMenu.classList.remove("active");
-  });
+body.addEventListener("click", CloseMenu)
 
-  sideMenu.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
+let aboutList = ["Bot developer", "Web developer", "Python programmer"]
 
-  document.addEventListener("click", () => {
-    sideMenu.classList.remove("active");
-  });
+let aboutListIndex = 0;
+let charIndex = 0;
+let text = "";
 
-});
+function typeWriter() {
+  if (charIndex < aboutList[aboutListIndex].length){
+      text += aboutList[aboutListIndex].charAt(charIndex)
+      about.innerHTML = text + " |";
+      charIndex++;
+      setTimeout(typeWriter, 120)
+  }
+  else{
+    text = ""
+    setTimeout(erase, 2000)
+  }
+}
+
+function erase() {
+  if (charIndex != 0) {
+    charIndex--;
+    about.innerHTML = about.innerHTML.slice(0, charIndex) + " |";
+    setTimeout(erase, 80)
+  }
+  else {
+    aboutListIndex = (aboutListIndex + 1) % aboutList.length;
+    setTimeout(typeWriter, 120)
+  }
+}
+
+typeWriter()
