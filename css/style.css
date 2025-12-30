@@ -262,6 +262,22 @@ main > section > .info h3 {
   align-items: center;
   flex-direction: column;
 }
+.about span {
+  animation: Blinking 1s infinite;
+}
+
+@keyframes Blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 main > section > .info p {
   font-size: 12px;
 }

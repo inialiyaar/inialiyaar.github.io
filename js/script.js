@@ -32,7 +32,7 @@ let text = "";
 function typeWriter() {
   if (charIndex < aboutList[aboutListIndex].length){
       text += aboutList[aboutListIndex].charAt(charIndex)
-      about.innerHTML = text + " |";
+      about.innerHTML = text + "<span> |</span>";
       charIndex++;
       setTimeout(typeWriter, 120)
   }
@@ -45,7 +45,7 @@ function typeWriter() {
 function erase() {
   if (charIndex != 0) {
     charIndex--;
-    about.innerHTML = about.innerHTML.slice(0, charIndex) + " |";
+    about.innerHTML = about.innerHTML.slice(0, charIndex) + "<span> |</span>";
     setTimeout(erase, 80)
   }
   else {
