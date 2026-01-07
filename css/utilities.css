@@ -1,0 +1,36 @@
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.width1 {
+  width: 100%;
+}
+
+.height1 {
+  height: 50vh;
+  min-height: 350px;
+}
+
+.hover:hover {
+  border: 1px solid aqua;
+}

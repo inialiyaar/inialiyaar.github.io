@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   --theme-background-color: rgb(15, 23, 36);
   --light-theme-background: rgb(40, 45, 80);
   --contentbackground: rgb(30, 41, 59);
   --searchcolor: rgb(248, 250, 252);
-  --baloo2: "Baloo 2", Arial, sans-serif;
+  --poppins: "Poppins", sans-serif;
   --theme-color: white;
 }
 
@@ -13,51 +13,56 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--baloo2);
-  font-optical-sizing: auto;
-  font-style: normal;
+  font-family: var(--poppins);
 }
+
 body {
   background-color: var(--theme-background-color);
   color: var(--theme-color);
 }
+
 #loader {
   width: 100%;
   height: 100vh;
   border: 2px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
 #loader .center {
   display: grid;
   grid-template-areas: center-logo;
 }
+
 #loader .center img {
   width: 100px;
   height: 100px;
   border: 2px solid var(--theme-background-color);
   border-radius: 50%;
 }
+
 #loader .center div {
   grid-area: center-logo;
 }
+
 #loader .python-icon {
   transform: translate(-30vw, -30vh);
 }
+
 #loader .css-icon {
   transform: translate(30vw, -30vh);
 }
+
 #loader .html-icon {
   transform: translate(-30vw, 30vh);
 }
+
 #loader .js-icon {
   transform: translate(30vw, 30vh);
 }
+
 #loader .inialiyaar-icon {
   transform: scale(0.5);
   opacity: 0;
-  animation: Logo-Popup 300ms ease-in 1200ms ;
+  animation: Logo-Popup 300ms ease-in 1200ms;
 }
 
 @keyframes MusicIconAnimate {
@@ -65,21 +70,26 @@ body {
     transform: translateX(0px);
     opacity: 1;
   }
+  
   50% {
     transform: translateX(30vw) scale(0.5);
   }
+  
   100% {
     transform: translateX(0px);
   }
 }
+
 @keyframes AnimeIconAnimate {
   0% {
     transform: translateX(0px);
     opacity: 1;
   }
+  
   50% {
     transform: translateX(-30vw) scale(0.5);
   }
+  
   100% {
     transform: translateX(0px);
   }
@@ -89,179 +99,86 @@ body {
   0% {
     opacity: 1;
   }
+  
   100% {
     transform: scale(10);
   }
 }
+
 @keyframes Logo-Center {
   80% {
     transform: translate(0px, 0px);
   }
+  
   90% {
     transform: scale(0.5);
   }
+  
   100% {
     opacity: 0;
   }
 }
-#loader .python-icon, #loader .css-icon, #loader .html-icon, #loader .js-icon {
+
+#loader .python-icon,
+#loader .css-icon,
+#loader .html-icon,
+#loader .js-icon {
   animation: Logo-Center 300ms linear 100ms forwards;
 }
 
-#loader > .center > .music-icon {
+#loader>.center>.music-icon {
   
   opacity: 0;
   animation: MusicIconAnimate 1s ease-in-out 450ms;
 }
 
-#loader > .center > .anime-icon {
+#loader>.center>.anime-icon {
   
   opacity: 0;
   animation: AnimeIconAnimate 1s ease-in-out 450ms;
 }
 
-header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-header nav {
-  height: 90px;
-  width: 90%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: sticky;
-  top: 0px;
-  background-color: var(--theme-background-color);
-}
-#search-input {
-  width: 60vw;
-  background-color: var(--contentbackground);
-  color: var(--searchcolor);
-  border: none;
-  padding: 5px;
-  max-width: 400px;
-  height: 40px;
-  border-radius: 10px;
-}
-#search-input:hover{
-  outline: none;
-  background-color: var(--light-theme-background);
-}
-.menu-bar{
-  height: 40px;
-  background-color: var(--theme-background-color);
-  border: none;
-  position: relative;
-  top: 14px;
-  left: 10px;
-}
-
-.home-menu{
-  height: 40px;
-  background-color: var(--theme-background-color);
-  border: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.menu-bar > img {
-  width: 40px;
-  position: absolute;
-  top: 0px;
-  left: 10px;
-}
-.nav-logo {
-  width: 40px;
-  position: absolute;
-  top: 32px;
-  left: -8px;
-  border-radius: 50%;
-}
-.home-menu > img {
-  width: 40px;
-}
 .hero-pannel {
+  margin-top: 20px;
   width: 90%;
   max-width: 400px;
   height: 100px;
   background-color: var(--contentbackground);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 10px;
+  border: 1px solid var(--contentbackground);
 }
-.hero-pannel > .inialiyaar-icon {
+
+.hero-pannel>.inialiyaar-icon {
   width: 70px;
   border-radius: 10px;
   border: 1px solid powderblue;
   margin-left: 5px;
 }
-.hero-pannel> .info >.description {
+
+.hero-pannel>.info>.description {
   font-size: 10px;
 }
-.hero-pannel> .info{
+
+.hero-pannel>.info {
   margin-left: 10px;
 }
-.hero-pannel>.info> h1{
+
+.hero-pannel>.info>h1 {
   font-size: 25px;
-  font-family: Arial;
+  
 }
 
-main section{
-  width: 100%;
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
+header nav {
+  height: 90px;
+  width: 90%;
+  background-color: var(--theme-background-color);
 }
 
-main > section > .info{
-  width: 300px;
-  height: 520px;
-  background-color: var(--contentbackground);
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-main section .info > img {
-  width: 260px;
-  border-radius: 10px;
-  border: 1px solid powderblue;
-}
-main > section > .info > div {
-  margin: 10px 0;
-}
-main > section > .info h3 {
-  background-color: rgba(255,255,255,0.75);
-  display: inline;
-  border-radius: 20px;
-  padding: 1px 12px;
-  margin: 0 8px;
-  border: 1px solid gray;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: Arial;
-}
-
-.about h2{
-  margin: 15px 0;
-  font-weight: 400;
-}
 .about {
-  width: 100%;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  height: 40px;
+  margin: 30px 10px 0 0;
 }
+
 .about span {
   animation: Blinking 1s infinite;
 }
@@ -270,238 +187,114 @@ main > section > .info h3 {
   0% {
     opacity: 1;
   }
+  
   50% {
     opacity: 0;
   }
+  
   100% {
     opacity: 1;
   }
 }
 
-main > section > .info p {
-  font-size: 12px;
-}
-main > section > .content {
-  width: 80%;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 20px;
-}
-@media only screen and (max-width: 600px){
-  main > section > .content{
-    grid-template-columns: 1fr;
-  }
-}
-main > section > .content > a >div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#search-input {
+  width: 70vw;
   background-color: var(--contentbackground);
-  border-radius: 10px;
-}
-
-.hover:hover{
-  border: 1px solid aqua;
-}
-
-main > section >.content > a{
-  color: White;
-  text-decoration: none;
-}
-#sideMenu {
-  position: fixed;
-  top: 0;
-  right: -70%;
-  width: 70%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--contentbackground);
-  transition: right 0.3s ease;
-  overflow-y: auto;
-}
-#sideMenu a {
-  margin: 25px 30px;
-  text-decoration: none;
-  font-size: 25px;
-  color: White;
-}
-#sideMenu a > img {
-  width: 30px;
-  position: relative;
-  top: 7px;
-  margin-right: 10px;
-}
-#sideMenu > hr {
-  color: white;
-  width: 80%;
-  margin: 10px auto;
-}
-#sideMenu button {
-  margin: 20px;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  background-color: var(--contentbackground);
-  color: white;
-  border: 2px solid lightgray;
-  border-radius: 10px;
-  align-self: flex-end;
-  font-weight: bold;
-}
-#sideMenu h3 {
-  font-size: 30px;
-  margin: 25px auto;
-  font-family: Arial;
-}
-
-#sideMenu.PushMenu{
-  right: 0;
-  z-index: 10;
-  box-shadow: -20px 0 40px rgba(0, 0, 0, 0.6);
-}
-
-.homeFooter{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.homeFooter h3{
-  font-size: 36px;
-}
-footer > .footerbox {
-  width: 90%;
+  color: var(--searchcolor);
+  border: none;
+  padding: 5px 20px;
   max-width: 400px;
-  height: 100px;
-  background-color: var(--contentbackground);
+  height: 40px;
   border-radius: 10px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-footer .footerbox div span {
-  font-size: 20px;
-  font-weight: bold;
 }
 
-footer > .footerbox img {
-  width: 20px;
-  position: relative;
-  top: 3px;
-  margin-right: 5px;
+#search-input:hover {
+  outline: none;
+  background-color: var(--light-theme-background);
 }
-footer .footerbox a {
-  color: white;
-  text-decoration: none;
+
+.exploreBtn {
+  width: 80%;
+  max-width: 500px;
 }
-header > h1 {
-  font-size: 38px;
-  padding: 10px 50px;
-  border-radius: 10px;
+
+.exploreBtn button {
+  color: White;
+  border: 2px solid White;
+  background-color: var(--theme-background-color);
+  padding: 3px 20px;
+  border-radius: 25px;
+  font-size: 17px;
 }
-header > h2 {
-  font-size: 30px;
-  font-family: Arial;
+
+.exploreBtn .active {
+  background-color: var(--searchcolor);
+  color: var(--theme-background-color);
 }
 .anime, .music {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.anime > div {
-  width: 90%;
-  background-color: var(--contentbackground);
-  border-radius: 10px;
-  margin: 20px 0;
-  height: 200px;
-  display: flex;
-}
-.anime > div > img {
-  width: 100px;
-  overflow: hidden;
-  border-radius: 10px;
-  height: 70%;
-  margin: 10px 10px;
-}
-.anime .info {
-  width: 80%;
-  margin-top: 30px;
-  height: 5%;
-}
-.anime .info .capsule{
-  font-size: 10px;
-  border: 1px solid gray;
-  border-radius: 20px;
-  height: 20px;
-  padding: 0px 5px;
-  position: relative;
-  bottom: 18px;
-  margin-left: 2px;
-}
-.anime .info h3 {
-  display: inline-block;
-  font-size: 15px;
-  transform: translateY(-15px);
-}
-
-.anime .info p {
-  font-size: 10px;
-  color: var(--searchcolor);
-}
-.anime .info img {
-  width: 25px;
-  position: relative;
-  top: 10px;
-}
-.anime .info .rate {
-  font-size: 20px;
-  font-weight: 400;
-  position: relative;
-  top: 5px;
-}
-
-.music > div {
-  width: 90%;
-  height: 450px;
-  background-color: var(--contentbackground);
-  border-radius: 10px;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.music > div > img {
-  width: 90%;
-  max-width: 300px;
-  height: 200px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  border: 1px solid powderblue;
-}
-.music > div > h2 {
-  font-size: 36px;
-  transform: translateY(-8px);
-}
-.music > div > h3 {
-  font-size: 25px;
-  width: 80%;
-  text-align: center;
-  color: rgba(255,255,255,0.50);
-  border-bottom: 2px solid white;
-  transform: translateY(-15px);
-}
-.music > div > a {
-  background-color: tomato;
-  text-decoration: none;
-  font-size: 35px;
+  overflow: auto;
   margin-top: 10px;
-  font-weight: bolder;
-  color: white;
-  padding: 0px 30px;
-  border-radius: 30px;
+}
+.animeCard {
+  margin-top: 20px;
+  width: 80%;
+  background-color: var(--contentbackground);
+  min-height: 120px;
+  border-radius: 10px;
+  border: 1px solid var(--contentbackground);
+  max-width: 500px;
+}
+
+.animeCard img {
+  height: 100px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.animeCard div {
+  width: 68%;
+  height: 100px;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+.animeCard p {
+  font-size: 5px;
+}
+
+.musicCard {
+  margin-top: 20px;
+  width: 80%;
+  background-color: var(--contentbackground);
+  min-height: 120px;
+  border-radius: 10px;
+  border: 1px solid var(--contentbackground);
+  max-width: 500px;
+}
+.musicCard div {
+  height: 80px;
+  width: 60%;
+  margin-left: 5px;
+  overflow: hidden;
+  gap: 10px;
+}
+.musicCard img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.musicCard p:nth-child(2){
+  opacity: 0.80;
+  font-size: 14px;
+  font-weight: bold;
+}
+.musicCard p:nth-child(3){
+  font-size: 10px;
+}
+
+@media only screen and (orientation: landscape) {
+  .animeCard div {
+    gap: 10px;
+  }
 }
