@@ -55,14 +55,18 @@ Array.from(document.querySelector(".exploreBtn").getElementsByTagName("button"))
 })
 
 async function fetchData(file){
-  const res = await fetch(file)
-  const result = await res.json()
+  const res = await fetch(file);
+  const result = await res.json();
   return result
 }
 
-async function loadAnimes(){
-  let animes = await fetchData("/data/anime.json")
+function loadAnimes(animes){
   let div = document.querySelector(".anime")
+  div.innerHTML = ""
+  if(animes.length ===0){
+    div.innerHTML = `<div class="animeCard flex align-center hover justify-center">No anime yet.</div>`
+    return
+  }
   animes.forEach((anime)=>{
     div.innerHTML += `<div class="animeCard flex align-center hover">
           <img src="${anime.image}" alt="${anime.title}">
@@ -75,10 +79,15 @@ async function loadAnimes(){
   })
 }
 
-async function loadMusics(){
-  let musics = await fetchData("/data/music.json")
+function loadMusics(musics){
+  let div = document.querySelector(".music")
+  div.innerHTML = ""
+  if(musics.length ===0){
+    div.innerHTML = `<div class="animeCard flex align-center hover justify-center">No music yet.</div>`
+    return
+  }
   musics.forEach((music)=>{
-    document.querySelector(".music").innerHTML += `<div class="musicCard flex align-center hover">
+    div.innerHTML += `<div class="musicCard flex align-center hover">
           <img src="${music.image}" alt="${music.title}">
           <div class="flex flex-column">
             <h4>${music.title}</h4>
@@ -89,9 +98,34 @@ async function loadMusics(){
   })
 }
 
+
+
 async function main(){
-  await loadAnimes()
-  await loadMusics()
+  let query, section, animes, musics;
+  animes = await fetchData("/data/anime.json")
+  loadAnimes(animes)
+  musics = await fetchData("/data/music.json")
+  loadMusics(musics)
+  const search = document.getElementById("search-input")
+  search.addEventListener("input", async ()=>{
+    query = search.value.trim().toLowerCase()
+    Array.from(document.querySelector(".exploreBtn").getElementsByTagName("button")).forEach(e=>{
+      if(e.getAttribute("class") === "active"){
+        section = e.id.slice(0, -3)
+      }
+    })
+    let data = await fetchData(`/data/${section}.json`)
+    newData = data.filter(e=>{
+      return e.title.toLowerCase().includes(query);
+    });
+    console.log(newData)
+    if(section === "anime"){
+      loadAnimes(newData)
+    }
+    else if (section === "music"){
+      loadMusics(newData)
+    }
+  })
 }
 
 main()
