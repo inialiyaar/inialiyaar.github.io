@@ -116,7 +116,12 @@ async function main(){
     })
     let data = await fetchData(`/data/${section}.json`)
     newData = data.filter(e=>{
-      return e.title.toLowerCase().includes(query);
+      if(section === "anime"){
+        return e.title.toLowerCase().includes(query) || e.description.toLowerCase().includes(query);
+      }
+      else if(section === "music"){
+        return e.title.toLowerCase().includes(query) || e.artist.toLowerCase().includes(query);
+      }
     });
     console.log(newData)
     if(section === "anime"){
