@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Tu Hai Kahan",
+    "artist": "AUR",
+    "duration": "4 minutes 3 seconds",
+    "image": "/assets/music/tu-hai-kahan.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Me",
+    "artist": "AUR",
+    "duration": "4 minutes 3 seconds",
+    "image": "/assets/music/me.jpg"
+  },
+  {
+    "id": 3,
+    "title": "You",
+    "artist": "AUR",
+    "duration": "4 minutes 3 seconds",
+    "image": "/assets/music/me.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Purple",
+    "artist": "AUR",
+    "duration": "4 minutes 42 seconds",
+    "image": "/assets/music/me.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Meherbaan",
+    "artist": "JANI",
+    "duration": "3 minutes 32 seconds",
+    "image": "/assets/music/meherbaan.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Kabhi Kabhi",
+    "artist": "AUR",
+    "duration": "3 minutes 36 seconds",
+    "image": "/assets/music/kabhi-kabhi.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Shikayat",
+    "artist": "AUR",
+    "duration": "3 minutes 33 seconds",
+    "image": "/assets/music/shikayat.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Tu Bata",
+    "artist": "Aftab",
+    "duration": "2 minutes 40 seconds",
+    "image": "/assets/music/tu-bata.jpg"
+  }
+]

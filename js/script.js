@@ -54,59 +54,44 @@ Array.from(document.querySelector(".exploreBtn").getElementsByTagName("button"))
   })
 })
 
-async function fetchFiles(folder){
-  let files = []
-  let file = await fetch(`/assets/${folder}/`)
-  let textFormat = await file.text()
-  let div = document.createElement("div")
-  div.innerHTML = textFormat
-  Array.from(div.getElementsByTagName("a")).forEach((e)=>{
-    if(e.href.includes(`/assets/${folder}/`)){
-      files.push(e.href)
-    }
-  })
-  return files
+async function fetchData(file){
+  const res = await fetch(file)
+  const result = await res.json()
+  return result
 }
 
-function appendAnime(animes){
+async function loadAnimes(){
+  let animes = await fetchData("/data/anime.json")
+  let div = document.querySelector(".anime")
   animes.forEach((anime)=>{
-    let div = document.querySelector(".anime")
-    let img = anime.trim();
-    anime = anime.slice(anime.indexOf("/anime/")+7).replaceAll("%20", " ").replace("%E2%80%A2", ".").replaceAll("%2C", ",").split("_")
-    anime[2] = anime[2].replace(".jpg", "");
-    anime[1].length>170?anime[1]=anime[1].slice(0, 170) + "...":anime[1]=anime[1]
     div.innerHTML += `<div class="animeCard flex align-center hover">
-          <img src="${img}" alt="${anime[0]}">
+          <img src="${anime.image}" alt="${anime.title}">
           <div class="flex flex-column">
-            <h4>${anime[0]}</h4>
-            <p>${anime[1]}</p>
-            <span>⭐ ${anime[2]}/10</span>
+            <h4>${anime.title}</h4>
+            <p>${anime.description}</p>
+            <span>⭐ ${anime.rating}/10</span>
           </div>
         </div>`
   })
 }
 
-function appendMusic(musics){
+async function loadMusics(){
+  let musics = await fetchData("/data/music.json")
   musics.forEach((music)=>{
-    let img = music;
-    music = music.slice(music.indexOf("/music")+7).replaceAll("%20", " ").split("_")
-    music[2] = music[2].replace(".jpeg", "").split("-")
     document.querySelector(".music").innerHTML += `<div class="musicCard flex align-center hover">
-          <img src="${img}" alt="${music[0]}">
+          <img src="${music.image}" alt="${music.title}">
           <div class="flex flex-column">
-            <h4>${music[0]}</h4>
-            <p>${music[1]}</p> 
-            <p>Duration: ${music[2][0]} minutes ${music[2][1]} seconds</p>
+            <h4>${music.title}</h4>
+            <p>${music.artist}</p> 
+            <p>Duration: ${music.duration}</p>
           </div>
         </div>`
   })
 }
 
 async function main(){
-  let animes = await fetchFiles("anime")
-  appendAnime(animes)
-  let musics = await fetchFiles("music")
-  appendMusic(musics)
+  await loadAnimes()
+  await loadMusics()
 }
 
 main()

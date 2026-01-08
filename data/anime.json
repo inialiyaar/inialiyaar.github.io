@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "Attack On Titan",
+    "description": "After his hometown is destroyed, young Eren Jaeger vows to cleanse the earth of the giant humanoid Titans that have brought humanity to the brink of extinction.",
+    "rating": "9.1",
+    "image": "/assets/anime/attack-on-titan.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Demon Slayer",
+    "description": "A family is attacked by demons and only two members survive - Tanjiro and his sister Nezuko, who is turning into a demon slowly Tanjiro sets out to become a demon slayer to avenge his family and cure his sister.",
+    "rating": "8.6",
+    "image": "/assets/anime/demon-slayer.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Jujutsu Kaisen",
+    "description": "A boy swallows a cursed talisman - the finger of a demon - and becomes cursed himself He enters a shaman's school to be able to locate the demon's other body parts and thus exorcise himself.",
+    "rating": "8.5",
+    "image": "/assets/anime/jujutsu-kaisen.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Naruto Shippuden",
+    "description": "Naruto Uzumaki, is a loud, hyperactive, adolescent ninja who constantly searches for approval and recognition, as well as to become Hokage, who is acknowledged as the leader and strongest of all ninja in the village.",
+    "rating": "8.7",
+    "image": "/assets/anime/naruto-shippuden.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Naruto",
+    "description": "Naruto Uzumaki, a mischievous adolescent ninja, struggles as he searches for recognition and dreams of becoming the Hokage, the village's leader and strongest ninja.",
+    "rating": "8.74",
+    "image": "/assets/anime/naruto.jpg"
+  }
+]
